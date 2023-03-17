@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from './components/LoginPage/LoginPage';
+import { ThemeProvider, createTheme } from '@mui/material';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import DashboardWrapper from './components/UI/DashboardWrapper';
+import ViewClient from './pages/ViewPage/ViewClient';
+import AddClient from './pages/AddClient/AddClient';
+
+const theme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: 'Nunito Sans, sans-serif',
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <ToastContainer />
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+
+        <Route element={<DashboardWrapper />}>
+          <Route exact path='dashboard/viewClient' element={<ViewClient />} />
+          <Route path='dashboard/addClient' element={<AddClient />} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
