@@ -1,4 +1,5 @@
 import {
+  Drawer,
   InputAdornment,
   List,
   ListItem,
@@ -43,6 +44,8 @@ const normalLink = {
   color: '#686687',
 };
 
+// const drawerWidth = 260;
+
 function Sidebar() {
   return (
     <Box
@@ -52,6 +55,18 @@ function Sidebar() {
         // position: 'relative',
       }}
     >
+      {/* <Drawer
+        sx={{
+          width: '100%',
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: 'fitContent',
+            boxSizing: 'border-box',
+          },
+        }}
+        variant='permanent'
+        anchor='left'
+      > */}
       <Box>
         <Typography fontWeight={'bold'}>Company name</Typography>
         <CustomTextField
@@ -66,7 +81,6 @@ function Sidebar() {
           }}
         />
       </Box>
-
       <Box
         sx={{
           marginTop: '1rem',
@@ -123,7 +137,8 @@ function Sidebar() {
           </Box>
           <LogoutOutlinedIcon sx={{ color: '#B8BABC' }} />
         </Box>
-      </Box>
+      </Box>{' '}
+      {/* </Drawer> */}
     </Box>
   );
 }
