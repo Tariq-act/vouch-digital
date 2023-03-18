@@ -18,7 +18,6 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import { clientInfo, tableHead } from './tableInfoData';
 import ThreeDotOption from '../../components/threeDot/ThreeDot';
 
