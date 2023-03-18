@@ -64,8 +64,9 @@ function Login() {
         height: '100vh',
         margin: 'auto',
         gap: '0.5rem',
-        padding: '0 6rem',
+        // padding: '0 6rem',
       }}
+      px={{ sm: 1, md: 3, lg: 8 }}
     >
       <Typography variant='h4' fontWeight={'bold'}>
         Welcome
