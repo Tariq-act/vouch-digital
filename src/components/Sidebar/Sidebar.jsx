@@ -1,5 +1,4 @@
 import {
-  Drawer,
   InputAdornment,
   List,
   ListItem,
@@ -144,74 +143,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
-{
-  /* <Box>
-        <Typography fontWeight={'bold'}>Company name</Typography>
-        <CustomTextField
-          type={'search'}
-          placeholder='Search modules'
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <SearchIcon sx={{ color: '#B8BABC' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </Box> */
-}
-
-{
-  /* <Box>
-<Typography
-  variant='p'
-  fontWeight={'bold'}
-  textTransform={'uppercase'}
-  color={'#B8BABC'}
->
-  Client Master
-</Typography>
-
-<List>
-  {sidebarData.map((item, idx) => (
-    <ListItem key={idx}>
-      <NavLink
-        to={item.path}
-        style={({ isActive }) => (isActive ? activeLink : normalLink)}
-      >
-        {item.title}
-      </NavLink>
-    </ListItem>
-  ))}
-</List>
-</Box>
-
-<Box
-sx={{
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  position: 'absolute',
-  gap: '0.5rem',
-  bottom: '1rem',
-  // width: '100%',
-}}
->
-<Box
-  sx={{
-    width: '20px',
-    height: '20px',
-    borderRadius: '50px',
-    backgroundColor: '#030037',
-  }}
-></Box>
-<Box>
-  <Typography fontWeight={'bold'} fontSize={'1rem'}>
-    James Burton
-  </Typography>
-  <Typography fontSize={'.8rem'}>james@thevouch.digital</Typography>
-</Box>
-<LogoutOutlinedIcon sx={{ color: '#B8BABC' }} />
-</Box> */
-}

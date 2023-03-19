@@ -12,6 +12,7 @@ const CustomBoxStyle = styled(Box)({
   marginBottom: '1rem',
   transform: 'rotateY(20deg)',
   boxShadow: '-10px 10px 0px rgba(0,0,0,0.1)',
+  zIndex: '10',
 });
 
 const LoginPage = () => {

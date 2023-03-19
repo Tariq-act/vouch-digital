@@ -10,6 +10,8 @@ import TabPanel from '@mui/lab/TabPanel';
 import TabContext from '@mui/lab/TabContext';
 import { styled } from '@mui/material/styles';
 import MuiTab from '@mui/material/Tab';
+import CreateProfile from './AddClientComponents/CreateProfile';
+import PaymentSetup from './AddClientComponents/PaymentSetup';
 
 const Tab = styled(MuiTab)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
@@ -38,14 +40,14 @@ const CustomTabList = styled(TabList)({
 });
 
 export default function OnboardingPage() {
-  const [value, setValue] = useState('personalInformation');
+  const [value, setValue] = useState('createProfile');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Card sx={{ margin: '2rem 1rem' }}>
+    <Card sx={{ margin: '1rem' }}>
       <TabContext value={value}>
         <CustomTabList
           onChange={handleChange}
@@ -53,7 +55,7 @@ export default function OnboardingPage() {
           sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
         >
           <Tab
-            value='personalInformation'
+            value='createProfile'
             label={
               <Box fontWeight={'bold'}>
                 <TabName>01 Create Profile</TabName>
@@ -61,7 +63,7 @@ export default function OnboardingPage() {
             }
           />
           <Tab
-            value='experience'
+            value='paymentSetup'
             label={
               <Box fontWeight={'bold'}>
                 <TabName>02 Payment Setup</TabName>
@@ -69,7 +71,7 @@ export default function OnboardingPage() {
             }
           />
           <Tab
-            value='skills'
+            value='themeSetup'
             label={
               <Box fontWeight={'bold'}>
                 <TabName>03 Theme Setup</TabName>
@@ -77,7 +79,7 @@ export default function OnboardingPage() {
             }
           />
           <Tab
-            value='bankDetails'
+            value='modulesSetup'
             label={
               <Box fontWeight={'bold'}>
                 <TabName>04 modules Setup</TabName>
@@ -86,10 +88,14 @@ export default function OnboardingPage() {
           />
         </CustomTabList>
 
-        <TabPanel sx={{ p: 0 }} value='personalInformation'></TabPanel>
-        <TabPanel sx={{ p: 0 }} value='experience'></TabPanel>
-        <TabPanel sx={{ p: 0 }} value='skills'></TabPanel>
-        <TabPanel sx={{ p: 0 }} value='bankDetails'></TabPanel>
+        <TabPanel sx={{ p: 0 }} value='createProfile'>
+          <CreateProfile />
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='paymentSetup'>
+          <PaymentSetup />
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='themeSetup'></TabPanel>
+        <TabPanel sx={{ p: 0 }} value='modulesSetup'></TabPanel>
       </TabContext>
     </Card>
   );
