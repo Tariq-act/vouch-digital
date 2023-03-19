@@ -7,9 +7,9 @@ export const LoginApi = async (data) => {
     toast.success('Login Successfully');
     const resData = await res;
 
-    console.log(resData);
+    // console.log(resData);
   } catch (error) {
-    toast.error('Please enter valid field');
-    console.log(error);
+    toast.error('Missing Password');
+    // console.log(error);
   }
 };
